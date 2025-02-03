@@ -50,21 +50,6 @@ pip install pandas numpy tensorflow nltk gensim matplotlib
    cd news-classification
    ```
 
-2. Run data preprocessing:
-   ```bash
-   python preprocess_data.py
-   ```
-
-3. Train the model:
-   ```bash
-   python train_model.py
-   ```
-
-4. Evaluate the model:
-   ```bash
-   python evaluate_model.py
-   ```
-
 ---
 
 ### **Results**
