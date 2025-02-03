@@ -85,12 +85,3 @@ pip install pandas numpy tensorflow nltk gensim matplotlib
 - **Yash Dilip Phalke**
 
 For any queries, feel free to open an issue.
-
----
-
-### **License**
-This project is licensed under the **MIT License**. See `LICENSE` for details.
-
----
-
-Would you like to add anything specific, such as dataset sources or visualization details? 🚀
