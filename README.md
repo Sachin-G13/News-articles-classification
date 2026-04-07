@@ -1,25 +1,24 @@
 # **News Articles Classification: Detecting Fake News with AI**
 
 ### **Overview**
-This project applies **deep learning** to classify news articles as **real or fake**, leveraging **CNN-Bidirectional LSTM** for advanced **feature extraction** and **sequence learning**. The model is trained on labeled news data to mitigate misinformation spread on digital platforms.
+This project leverages a **BERT-based transformer model** for news articles classification, utilizing contextual language understanding to accurately distinguish between **real and fake news articles**. The approach significantly improves semantic comprehension compared to traditional sequence models.
 
 ---
 
 ### **Project Workflow**
 1. **Data Collection & Preprocessing**
-   - Uses **'train.tsv'** for training and **'test.tsv'** for evaluation.
-   - Target variable: **'label'** (1: Fake, 0: Real).
-   - **Text preprocessing** includes stopword removal and token filtering using **NLTK & Gensim**.
-   - **Tokenization & padding** ensure uniform input size.
+   - Utilized 'train.tsv' (~100K+ samples) for training and 'test.tsv' for evaluation.
+   - Target variable: 'label' (1: Fake, 0: Real).
+   - Minimal preprocessing applied (removal of noisy tokens), preserving text structure for context-aware transformer learning.
+   - Employed BERT tokenizer (WordPiece) for subword tokenization and dynamic padding.
 
-2. **Model Architecture**
-   - **Embedding Layer**: Converts words into dense vector representations.
-   - **Convolutional Layers**: Extracts local text features using **Conv1D & MaxPooling**.
-   - **Bidirectional LSTM**: Captures context from both past and future sequences.
-   - **Dropout Layer**: Prevents overfitting.
-   - **Dense Layer**: Outputs the probability of a news article being fake or real.
+3. **Model Architecture**
+   - Implemented pretrained BERT (base-uncased) for deep contextual embeddings.
+   - Added a classification head (dense layer + softmax) on top of BERT’s pooled output.
+   - Fine-tuned the entire transformer model end-to-end for task-specific learning.
+   - Leveraged self-attention mechanism to capture long-range dependencies and contextual relationships.
 
-3. **Training & Evaluation**
+4. **Training & Evaluation**
    - **Loss Function**: Binary Cross-Entropy.
    - **Optimizer**: Adam.
    - **Metrics**: Accuracy, Precision, Recall, F1 Score, ROC AUC.
@@ -28,7 +27,7 @@ This project applies **deep learning** to classify news articles as **real or fa
      - **80-20** train-validation split.
    - Achieved **97% accuracy** in detecting fake news.
 
-4. **Future Work**
+5. **Future Work**
    - Extend to **multilingual datasets**.
    - Deploy model for **real-time news classification**.
 
